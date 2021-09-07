@@ -18,7 +18,10 @@ const COLORS = {
     main1: '#e14dff',  //보라계열
     main2: '#d91cff',
     main3: '#a308c2',
-    main4: '#560666'
+    main4: '#560666',
+
+    aquablue: '#468cf0',
+    buttonBlue: '#91bdfa'
 
 }
 

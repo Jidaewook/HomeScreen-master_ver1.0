@@ -96,4 +96,28 @@ export const menuItem = [
     }
   ]
 
-export default {viewItems, comments, menuItem}
+const onboarding_screens = [
+    {
+        id: 1,
+        backgroundImage: require("../images/back_01.jpeg"),
+        bannerImage: require("../images/onboard/Business_PNG.png"),
+        title: "Choose a Favourite Food",
+        description: "When you oder Eat Steet, we’ll hook you up with exclusive coupon, specials and rewards"
+    },
+    {
+        id: 2,
+        backgroundImage: require("../images/back_01.jpeg"),
+        bannerImage: require("../images/onboard/Chat_PNG.png"),
+        title: "Hot Delivery to Home",
+        description: "We make food ordering fasr, simple and free-no matter if you order online or cash"
+    },
+    {
+        id: 3,
+        backgroundImage: require("../images/back_01.jpeg"),
+        bannerImage: require("../images/onboard/SEO_PNG.png"),
+        title: "Receive the Great Food",
+        description: "You’ll receive the great food within a hour. And get free delivery credits for every order."
+    }
+]
+
+export default {viewItems, comments, menuItem, onboarding_screens}

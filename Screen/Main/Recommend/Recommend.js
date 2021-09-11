@@ -26,7 +26,7 @@
  import { LinearGradient } from 'expo-linear-gradient';
  
  const SPACING = 10;
- const ITEM_SIZE = Platform.OS === 'ios' ? width * 0.72 : width * 0.74;
+ const ITEM_SIZE = Platform.OS === 'ios' ? width * 0.95 : width * 0.95;
  const EMPTY_ITEM_SIZE = (width - ITEM_SIZE) / 2;
  const BACKDROP_HEIGHT = height * 0.65;
  
@@ -207,8 +207,8 @@
    },
    posterImage: {
      width: '100%',
-     height: ITEM_SIZE * 1,
-     resizeMode: 'cover',
+     height: ITEM_SIZE * 1.2,
+     resizeMode: 'stretch',
      borderRadius: 24,
      margin: 0,
      marginBottom: 10,

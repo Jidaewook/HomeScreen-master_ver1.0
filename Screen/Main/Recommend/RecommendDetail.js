@@ -59,7 +59,7 @@ const RecommendDetail = ({route}) => {
 
     const {id} = route.params;
     const [detail, setDetail] = useState({});
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     // const [text, onChangeText] = useState('Unless Text');
     // const [playing, setPlaying] = useState(false);
 
@@ -69,9 +69,11 @@ const RecommendDetail = ({route}) => {
     console.log('id', id)
 
     const getDetail = async (detailId) => {
-        await axios.get(`${BASE_URL}/ncs/${detailId}`)
+        setLoading(true)
+        await axios.get(`${BASE_URL}/workbook/${detailId}`)
                     .then(res => {
                         setDetail(res.data.results)
+                        setLoading(false)
                         console.log(res.data.results)
                     })
                     .catch(err => {
@@ -88,7 +90,7 @@ const RecommendDetail = ({route}) => {
             <ScrollView>
                 <View style={{height: height * 0.65, width: '100%'}}>
                     <Image 
-                        source={require('../../../assets/basicImage.png')}
+                        source={{uri: detail.poster}}
                         style={{height: '100%', width: '100%'}}
                         resizeMode='stretch'
                     />
@@ -103,12 +105,10 @@ const RecommendDetail = ({route}) => {
                 <View style={{height: 1200}}>
                     <View>
                         <Text style={styles.MainTitle}>
-                            {/* {detail.title} */}
-                            제목
+                            {detail.title}
                         </Text>
                         <Text style={styles.MainDesc}>
-                            {/* {detail.desc} */}
-                            설명
+                            {detail.desc}
                         </Text>
                     </View>
                     <View>
@@ -116,8 +116,7 @@ const RecommendDetail = ({route}) => {
                             정답
                         </Text>
                         <Text style={styles.slogan}>
-                            {/* {detail.answer} */}
-                            5번
+                            {detail.answer}
                         </Text>
                     </View>
                     <HLine />

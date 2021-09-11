@@ -33,7 +33,7 @@ const SignupScreen = () => {
     
     return (
         <DismissKeyboard>
-            <SafeAreaView style={{backgroundColor: COLORS.white, height: height}}>
+            <View style={{backgroundColor: COLORS.white, height: height}}>
                 <ImageBackground 
                         source={require('../../images/ImageBackground.png')}
                         style={styles.BackgroundImage}
@@ -116,7 +116,7 @@ const SignupScreen = () => {
                         </View>
                     </KeyboardAvoidingView>
                 </ScrollView>
-            </SafeAreaView>
+            </View>
         </DismissKeyboard>
 
     );

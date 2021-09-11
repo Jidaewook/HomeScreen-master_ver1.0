@@ -14,6 +14,7 @@ const COLORS = {
     gray3: '#a6a6a6',
     gray4: '#cccccc',
     gray5: '#e0e0e0',
+    gray6: '#F5F5F8',
 
     main1: '#e14dff',  //보라계열
     main2: '#d91cff',

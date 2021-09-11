@@ -14,7 +14,7 @@ const SigninScreen = () => {
     
     return (
         <DismissKeyboard>
-            <SafeAreaView style={styles.SafeAreaView}>
+            <View style={styles.SafeAreaView}>
                 <ImageBackground 
                         source={require('../../images/ImageBackground.png')}
                         style={styles.BackgroundImage}
@@ -37,6 +37,7 @@ const SigninScreen = () => {
                                 <Input 
                                     placeholder={"Email을 입력하세요"}
                                     style={styles.HolderText}
+                                    
                                 />
                                 <Text style={styles.SubTitle}>
                                         Password
@@ -108,7 +109,7 @@ const SigninScreen = () => {
                             </View>
                         </KeyboardAvoidingView>              
                     </ScrollView>
-            </SafeAreaView>
+            </View>
         </DismissKeyboard>
         
     );

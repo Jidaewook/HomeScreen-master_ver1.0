@@ -1,8 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import themes from '../../config/themes';
-import { COLORS } from '../../consts';
+import { COLORS, theme } from '../../consts';
 
 const AuthLayout = ({titleContainerStyle, title, subTitle, children}) => {
     return (
@@ -20,14 +19,14 @@ const AuthLayout = ({titleContainerStyle, title, subTitle, children}) => {
                 <View
                     style={{alignItems: 'center'}}
                 >
-                    {/* <Image 
-                        source={}
+                    <Image 
+                        source={require('../../images/onboard/voodoo_back.jpeg')}
                         resizeMode='contain'
                         style={{
                             height: 100,
                             width: 200
                         }}
-                    /> */}
+                    />
                 </View>
 
                 {/* Title */}
@@ -37,6 +36,8 @@ const AuthLayout = ({titleContainerStyle, title, subTitle, children}) => {
                     <Text
                         style={{
                             textAlign: 'center',
+                            fontSize: theme.sizes.h1,
+                            fontWeight: 'bold'
                         }}
                     >
                         {title}
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
     subTitle: {
         textAlign: 'center',
         color: COLORS.gray4,
-        marginTop: 25
+        marginTop: 25,
+        fontSize: theme.sizes.h4
     }
 })

@@ -23,7 +23,7 @@ const RegisterScreen = () => {
 
     function isEnableSignup () {
         return (
-            email != "" && password != "" && name != "" && emailErr =="" && passwordErr == ""
+            name != "" && password != "" && email != "" && emailErr == "" && passwordErr == "" && nameErr == ""
         )
     }
 
@@ -102,27 +102,19 @@ const RegisterScreen = () => {
                         </View>
                     }
                 />
+                
                 <TextButton 
                     buttonContainerStyle={{
-                        backgroundColor: isEnableSignup() ? COLORS.main4 : COLORS.gray4,
+                        backgroundColor: isEnableSignup() ? COLORS.main4 : COLORS.gray3, 
+                        height: 55,
                         alignItems: 'center',
                         marginTop: 25,
-                        borderRadius: 20,
-                        height: 55
-                    }}
+                        borderRadius: 20 }}
                     disabled={isEnableSignup() ? false : true}
-                    onPress={() => alert("회원가입")}
-                    label={"회원가입"}
+                    onPress={() => navigation.navigate("AddInfoScreen")}
+                    label={"다음"}
                     labelStyle={styles.registerLabelStyle}
                 />
-                <View>
-                    <TextIconButton
-                        label={"다음"}
-                        labelStyle={{color: COLORS.white, fontSize: theme.sizes.h3, }}
-                        containerStyle={{ marginTop: 20, height: 50, alignItems: 'center', borderRadius: 20, backgroundColor: COLORS.main4}}
-                        onPress={() => navigation.navigate("AddInfoScreen")}
-                    />
-                </View>
                 <View
                     style={{flexDirection: 'row', justifyContent: 'center'}}
                 >

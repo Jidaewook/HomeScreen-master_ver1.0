@@ -99,24 +99,24 @@ export const menuItem = [
 const onboarding_screens = [
     {
         id: 1,
-        backgroundImage: require("../images/back_01.jpeg"),
-        bannerImage: require("../images/onboard/Business_PNG.png"),
-        title: "Choose a Favourite Food",
-        description: "When you oder Eat Steet, we’ll hook you up with exclusive coupon, specials and rewards"
+        backgroundImage: require("../images/onboard/voodoo_back.jpeg"),
+        bannerImage: require("../images/onboard/1.png"),
+        title: "실제 출제위원 참여",
+        description: "실제 출제위원이 강조하는 내용                                   실제 출제위원이 푸는 방법                                         그 어디에서도 볼 수 없는 리얼리티"
     },
     {
         id: 2,
-        backgroundImage: require("../images/back_01.jpeg"),
-        bannerImage: require("../images/onboard/Chat_PNG.png"),
-        title: "Hot Delivery to Home",
-        description: "We make food ordering fasr, simple and free-no matter if you order online or cash"
+        backgroundImage: require("../images/onboard/voodoo_back.jpeg"),
+        bannerImage: require("../images/onboard/2.png"),
+        title: "피셋형/모듈형 무한 제공",
+        description: "피셋형과 모듈형                                                        두 유형에 대한 꾸준한 연습"
     },
     {
         id: 3,
-        backgroundImage: require("../images/back_01.jpeg"),
-        bannerImage: require("../images/onboard/SEO_PNG.png"),
-        title: "Receive the Great Food",
-        description: "You’ll receive the great food within a hour. And get free delivery credits for every order."
+        backgroundImage: require("../images/onboard/voodoo_back.jpeg"),
+        bannerImage: require("../images/onboard/3.png"),
+        title: "합격까지 무한",
+        description: "유튜브 기반 영상 강의를 통해                                                          적성검사 관련 공공교육을 실현하기 위한                                                          PASSME"
     }
 ]
 

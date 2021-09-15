@@ -31,8 +31,8 @@ const LoginScreen = () => {
 
     return (
         <AuthLayout 
-            title="Let's SignIn"
-            subTitle="로그인 하세요"
+            title="PASSME"
+            subTitle="패스미 서비스를 이용하기 위해 로그인 하세요."
         >
             <View style={styles.formContainer}>
                 <FormInput 

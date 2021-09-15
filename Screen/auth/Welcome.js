@@ -3,6 +3,7 @@ import {View, Text, Animated, Dimensions, ImageBackground, Image} from 'react-na
 import TextButton from '../../component/common/TextButton';
 import { COLORS, theme } from '../../consts';
 import mocks from '../../consts/mocks';
+import {useNavigation} from '@react-navigation/native';
 
 const {width, height} = Dimensions.get("window")
 
@@ -13,6 +14,7 @@ const Welcome = () => {
     const flatListRef = useRef();
     
     const [currentIndex, setCurrentIndex] = useState(0)
+    const navigation = useNavigation();
     const onViewChangeRef = useRef(({viewableItems, changed}) => {
         setCurrentIndex(viewableItems[0].index)
     })
@@ -25,7 +27,7 @@ const Welcome = () => {
         const dotPosition = Animated.divide(scrollX, width)
 
         return (
-            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 50}}>
                 {
                     mocks.onboarding_screens.map((item, index) => {
                         const dotColor = dotPosition.interpolate({
@@ -54,7 +56,7 @@ const Welcome = () => {
 
     const renderFooter = () => {
         return (
-            <View style={{height: 250, paddingBottom: 50}}>
+            <View style={{height: 150, paddingBottom: 30}}>
                 <View style={{flex: 1, justifyContent: 'center'}}>
                     <Dots />
                 </View>
@@ -64,18 +66,19 @@ const Welcome = () => {
                             flexDirection: 'row',
                             justifyContent: 'space-between',
                             paddingHorizontal: 20,
-                            marginVertical: 20
+                            marginVertical: 40
                         }}
                     >
                         <TextButton 
                             label="Skip"
                             buttonContainerStyle={{
                                 backgroundColor: null,
+                                marginLeft: 50
                             }}
                             labelStyle={{
-                                color: COLORS.gray4,
+                                color: COLORS.black,
                             }}
-                            onPress={() => alert("로그인화면")}
+                            onPress={() => navigation.navigate("SigninScreen")}
                         />
                         <TextButton 
                             label="Next"
@@ -85,7 +88,7 @@ const Welcome = () => {
                                 borderRadius: 20
                             }}
                             labelStyle={{
-                                color: COLORS.gray4,
+                                color: COLORS.white,
                             }}
                             onPress={() => {
                                 flatListRef.current.scrollToIndex({
@@ -101,8 +104,10 @@ const Welcome = () => {
                     currentIndex == mocks.onboarding_screens.length - 1 && 
                     <View
                         style={{
+                            flexDirection: 'row',
+                            justifyContent: 'flex-end',
                             paddingHorizontal: 20,
-                            marginVertical: 20
+                            marginVertical: 40
                         }}
                     >
                         <TextButton 
@@ -114,9 +119,9 @@ const Welcome = () => {
                                 
                             }}
                             labelStyle={{
-                                color: COLORS.gray4,
+                                color: COLORS.white,
                             }}
-                            onPress={() => alert("로그인 화면")}
+                            onPress={() => navigation.navigate("SigninScreen")}
                         />
                     </View>
                 }
@@ -155,7 +160,7 @@ const Welcome = () => {
                             style={{width: width}}
                         >
                             <View
-                                style={{flex: 5}}
+                                style={{flex: 3}}
                             >
                                 <ImageBackground 
                                     source={item.backgroundImage}
@@ -163,8 +168,10 @@ const Welcome = () => {
                                         felx: 1,
                                         alignItems: 'center',
                                         justifyContent: 'flex-end',
-                                        height: '92%',
+                                        height: '100%',
                                         width: '100%',
+                                        marginTop: 50,
+                                        
                                     
                                     }}
                                 >
@@ -174,7 +181,7 @@ const Welcome = () => {
                                         style={{
                                             width: width * 0.8,
                                             hegiht: width * 0.8,
-                                            marginBottom: -250
+                                            marginBottom: -300
                                         }}
                                     />
                                 </ImageBackground>
@@ -183,15 +190,17 @@ const Welcome = () => {
                             <View
                                 style={{
                                     flex: 1,
-                                    marginTop: 10,
+                                    marginTop: 30,
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     paddingHorizontal: 20,
+                                    height: 300,
+                                    // backgroundColor: 'black'
                                     // paddingBottom: 20
                                 }}
                             >
                                 <Text
-                                    style={{fontSize: 25}}
+                                    style={{fontSize: 25, marginTop: 50}}
                                 >
                                     {item.title}
                                 </Text>

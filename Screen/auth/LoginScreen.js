@@ -31,14 +31,14 @@ const LoginScreen = () => {
 
     return (
         <AuthLayout 
-            title="PASSME"
+            title="PASSME LOGIN"
             subTitle="패스미 서비스를 이용하기 위해 로그인 하세요."
         >
             <View style={styles.formContainer}>
                 <FormInput 
-                    label={'email'}
+                    label={'E-mail'}
                     value={email}
-                    placeholder={'Insert Your Email'}
+                    placeholder={'Insert Your E-mail'}
                     autoCompleteType="email"
                     onChange={(value) => {
                         utils.validateEmail(value, setEmailErr)
@@ -59,10 +59,10 @@ const LoginScreen = () => {
                     }
                 />
                 <FormInput 
-                    label={'password'}
+                    label={'PASSWORD'}
                     value={password}
                     secureTextEntry={!showPass}
-                    placeholder={'Insert Your Password'}
+                    placeholder={'Insert Your PASSWORD'}
                     autoCompleteType="password"
                     containerStyle={{marginTop: 20}}
                     onChange={(value) => {

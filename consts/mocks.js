@@ -108,7 +108,7 @@ const onboarding_screens = [
         id: 2,
         backgroundImage: require("../images/onboard/voodoo_back.jpeg"),
         bannerImage: require("../images/onboard/2.png"),
-        title: "피셋형/모듈형 무한 제공",
+        title: "피셋형/모듈형/인적성 모두 제공",
         description: "피셋형과 모듈형                                                        두 유형에 대한 꾸준한 연습"
     },
     {

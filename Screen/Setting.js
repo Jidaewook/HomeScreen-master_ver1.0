@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import {AsyncStorage, SectionList, SafeAreaView, View, Alert, Text, StyleSheet} from 'react-native';
+import {AsyncStorage,TouchableOpacity, SectionList, SafeAreaView, View, Alert, Text, StyleSheet} from 'react-native';
 import SettingSection from '../component/common/SettingSection';
 import {AntDesign} from '@expo/vector-icons';
 import axios from 'axios';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 import {mocks} from '../consts'

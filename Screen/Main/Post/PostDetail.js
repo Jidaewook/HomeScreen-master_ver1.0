@@ -1,11 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import { postApi } from '../../../api';
 
 import themes from '../../../config/themes';
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import HLine from '../../../component/common/HLine';
 

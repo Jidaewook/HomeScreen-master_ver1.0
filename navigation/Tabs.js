@@ -1,13 +1,13 @@
 import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeStack from '../navigation/Stack';
+import HomeStack from '../navigation/HomeStack';
 import PostStack from '../navigation/PostStack';
 import RecommendStack from '../navigation/RecommendStack';
 import ProfileStack from '../navigation/ProfileStack';
 import {Feather} from '@expo/vector-icons';
-import {Platform} from 'react-native';
+
 import themes from '../config/themes';
-import { color } from 'react-native-reanimated';
+
 
 const Tabs = createBottomTabNavigator();
 
@@ -61,9 +61,9 @@ export default () => {
             
 
             <Tabs.Screen name="Home" component={HomeStack} />
-            <Tabs.Screen name="Quiz" component={RecommendStack}/>
+            {/* <Tabs.Screen name="Quiz" component={RecommendStack}/>
             <Tabs.Screen name="List" component={PostStack} />
-            <Tabs.Screen name="Profile" component={ProfileStack} />
+            <Tabs.Screen name="Profile" component={ProfileStack} /> */}
 
         </Tabs.Navigator>
     );

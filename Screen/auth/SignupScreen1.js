@@ -1,12 +1,10 @@
 import { Input } from 'galio-framework';
 import React, {useState} from 'react';
-import {View, Text, SafeAreaView, Dimensions, ScrollView, StyleSheet, Button, KeyboardAvoidingView, ImageBackground} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {View, Text, SafeAreaView,TouchableOpacity, Dimensions, ScrollView, StyleSheet, Button, KeyboardAvoidingView, ImageBackground} from 'react-native';
 
 import DismissKeyboard from '../../component/common/DismissKeyboard';
 import { COLORS, theme } from '../../consts';
 import {useNavigation} from '@react-navigation/native';
-import { string } from 'prop-types';
 import Axios from 'axios';
 
 const {width, height} = Dimensions.get("window")

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, Image, StyleSheet, ScrollView} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {Text,TouchableOpacity, View, Image, StyleSheet, ScrollView} from 'react-native';
 import themes from '../../config/themes';
 
 const ProfileEdit = () => {

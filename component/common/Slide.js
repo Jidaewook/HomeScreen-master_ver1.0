@@ -1,10 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import { noticeApi, lectureApi, apiImage } from '../../api';
-import * as WebBroswer from 'expo-web-browser';
+import {View, Text, Image, StyleSheet, Dimensions, ScrollView} from 'react-native';
 import { ImageBackground } from 'react-native';
-import Genres from '../../component/common/Genres';
 
 
 const Slide = ({src, title, desc, genres}) => {

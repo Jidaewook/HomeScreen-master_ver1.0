@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { SafeAreaView } from 'react-native';
-import {View, SectionList, Text, StyleSheet, ScrollView} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {View,TouchableOpacity, SectionList, Text, StyleSheet, ScrollView} from 'react-native';
 import SettingSection from '../../../component/common/SettingSection';
 import themes from '../../../config/themes';
 

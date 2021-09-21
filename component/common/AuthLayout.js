@@ -20,11 +20,12 @@ const AuthLayout = ({titleContainerStyle, title, subTitle, children}) => {
                     style={{alignItems: 'center'}}
                 >
                     <Image 
-                        source={require('../../images/onboard/voodoo_back.jpeg')}
+                        source={require('../../images/onboard/logo.png')}
                         resizeMode='contain'
                         style={{
                             height: 100,
-                            width: 200
+                            width: 200,
+                            marginTop: 20
                         }}
                     />
                 </View>

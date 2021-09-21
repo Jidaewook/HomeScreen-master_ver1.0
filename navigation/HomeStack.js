@@ -13,11 +13,11 @@ import moreNcs from '../Screen/Main/BBS/moreNcs';
 import Setting from '../Screen/Setting';
 import BackBtn from '../component/common/BackBtn';
 
-const HomeStack = createStackNavigator();
+const HStack = createStackNavigator();
 
-export default () => {
+const HomeStack = () => {
     return ( 
-        <HomeStack.Navigator
+        <HStack.Navigator
             screenOptions={{
                 headerBackTitleVisible: false,
                 headerTransparent: false,
@@ -26,21 +26,21 @@ export default () => {
             }}
             initialRouteName="Main"
         >
-            <HomeStack.Screen 
+            <HStack.Screen 
                 name="Home" 
                 component={Home} 
                 options={{
                     headerShown: false
                 }}
             />
-            <HomeStack.Screen 
+            <HStack.Screen 
                 name="Notification" 
                 component={Notification} 
                
             />
-            <HomeStack.Screen name="Detail" component={Detail} />
-            <HomeStack.Screen name="Setting" component={Setting}  />
-            <HomeStack.Screen 
+            <HStack.Screen name="Detail" component={Detail} />
+            <HStack.Screen name="Setting" component={Setting}  />
+            <HStack.Screen 
                 options={{
                     title: "",
                     headerShown: true,
@@ -51,7 +51,7 @@ export default () => {
                 }}
                 name="NoticeBbs" component={NoticeBbs} 
             />
-            <HomeStack.Screen 
+            <HStack.Screen 
                 options={{
                     title: "",
                     headerShown: true,
@@ -62,7 +62,7 @@ export default () => {
                 }}
                 name="NcsBbs" component={NcsBbs} 
             />
-                <HomeStack.Screen 
+                <HStack.Screen 
                     options={{
                         title: "",
                         headerShown: true,
@@ -72,7 +72,7 @@ export default () => {
                     }}
                     name="CommunicationList" component={CommunicationList} 
                 />
-                <HomeStack.Screen 
+                <HStack.Screen 
                     options={{
                         title: "",
                         headerShown: true,
@@ -82,7 +82,7 @@ export default () => {
                     }}
                     name="MathList" component={MathList} 
                 />
-            <HomeStack.Screen 
+            <HStack.Screen 
                 options={{
                     title: "",
                     headerShown: true,
@@ -92,7 +92,7 @@ export default () => {
                 }}
                 name="PsatBbs" component={PsatBbs} 
             />
-            <HomeStack.Screen 
+            <HStack.Screen 
                 options={{
                     title: "",
                     headerShown: true,
@@ -102,7 +102,7 @@ export default () => {
                 }}
                 name="morePsat" component={morePsat} 
             />
-            <HomeStack.Screen 
+            <HStack.Screen 
                 options={{
                     title: "",
                     headerShown: true,
@@ -113,6 +113,9 @@ export default () => {
                 name="moreNcs" component={moreNcs} 
             />
             
-        </HomeStack.Navigator>
+        </HStack.Navigator>
     );
-};
+}
+    
+
+export default HomeStack

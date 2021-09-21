@@ -170,7 +170,7 @@ const Welcome = () => {
                                         justifyContent: 'flex-end',
                                         height: '100%',
                                         width: '100%',
-                                        marginTop: 50,
+                                        marginTop: 0,
                                         
                                     
                                     }}

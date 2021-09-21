@@ -6,12 +6,18 @@ import {AntDesign, Feather, Entypo} from '@expo/vector-icons';
 import { COLORS, theme } from '../../consts';
 import TextButton from '../../component/common/TextButton';
 import {useNavigation} from '@react-navigation/native';
+import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {userLogin} from '../../redux/userSlice';
+
 import utils from '../../utils/Utils';
 import TextIconButton from '../../component/common/TextIconButton';
-
 import facebookIcon from '../../images/icon/auth/facebook_icon.png';
 
+
 const LoginScreen = () => {
+
+    const dispatch = useDispatch();
 
     const [email, setEmail] = useState('')
     const [emailErr, setEmailErr] = useState('')
@@ -27,6 +33,21 @@ const LoginScreen = () => {
             email != "" && password != "" && emailErr == ""
         ) 
     }
+
+    const loginBtnTab = async () => {
+        // console.log("login", email)
+        // await axios.post("http://passme-env.eba-fkpnrszj.us-east-2.elasticbeanstalk.com/users/login", {email, password})
+        //             .then(res => {
+        //                 console.log(res.data)
+        //             })
+        //             .catch(err => {
+        //                 console.log(err.message)
+
+        //             })
+        
+        dispatch(userLogin({email, password}))
+    }
+
 
 
     return (
@@ -92,7 +113,7 @@ const LoginScreen = () => {
                         marginTop: 25,
                         borderRadius: 20 }}
                     disabled={isEnableSignin() ? false : true}
-                    onPress={() => alert("로그인")}
+                    onPress={() => loginBtnTab()}
                     label={"로그인"}
                     labelStyle={styles.loginLabelStyle}
                 />
@@ -111,17 +132,17 @@ const LoginScreen = () => {
                     <Text style={styles.BarButton}>
                         |
                     </Text>
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={styles.SmallButton2}
                         onPress={() => navigation.navigate("ForgotIdScreen")}
                     >
                         <Text style={styles.SmallButtonText}>
                                 {"   "}아이디 찾기
                         </Text>
-                    </TouchableOpacity>
-                    <Text style={styles.BarButton}>
+                    </TouchableOpacity> */}
+                    {/* <Text style={styles.BarButton}>
                         |
-                    </Text>
+                    </Text> */}
                     <TouchableOpacity
                         style={styles.SmallButton3}
                         onPress={() => navigation.navigate("ForgotPwScreen")}

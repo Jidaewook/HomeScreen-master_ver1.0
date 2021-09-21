@@ -10,41 +10,41 @@ import utils from '../../utils/Utils';
 import {COLORS, theme} from '../../consts/index';
 
 const ForgotPwScreen = () => {
-    const [password, setPassword] = useState('');
-    const [passwordErr, setPasswordErr] = useState('');
+    const [email, setEmail] = useState('');
+    const [emailErr, setEmailErr] = useState('');
 
     const navigation = useNavigation();
 
     function isEnableSignin () {
         return (
-            password != "" && passwordErr == ""
+            email != "" && emailErr == ""
         ) 
     }
 
     return (
         <AuthLayout
             title={"PASSME FORGOT PASSWORD"}
-            subTitle={"잊어버린 비밀번호를 찾기 위해,                                    비밀번호를 입력해주세요"}
+            subTitle={"잊어버린 비밀번호를 찾기 위해,                                    가입한 이메일을 입력해주세요"}
         >
             <View style={styles.formContainer}>
-                <FormInput 
-                    label={'PASSWORD'}
-                    value={password}
-                    placeholder={'Insert Your PASSWMORD'}
-                    autoCompleteType="password"
+            <FormInput 
+                    label={'E-mail'}
+                    value={email}
+                    placeholder={'Insert Your E-mail'}
+                    autoCompleteType="email"
                     onChange={(value) => {
-                        utils.validatePassword(value, setPasswordErr)
-                        setPassword(value)
+                        utils.validateEmail(value, setEmailErr)
+                        setEmail(value)
                     
                     }}
-                    errorMsg={passwordErr}
+                    errorMsg={emailErr}
                     appendComponent={
                         <View
                             style={{justifyContent: 'center'}}
                         >
                             <AntDesign
                                 name={"check"}
-                                color={(password != "") || (password != "" && passwordErr == "") ? COLORS.main4 : COLORS.gray4}
+                                color={(email != "") || (email != "" && emailErr == "") ? COLORS.main4 : COLORS.gray4}
                                 size={24}
                             />
                         </View>
@@ -63,8 +63,7 @@ const ForgotPwScreen = () => {
                 label={"비밀번호 찾기"}
                 labelStyle={styles.loginLabelStyle}
             />
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <TextButton 
+                {/* <TextButton 
                     buttonContainerStyle={{
                         // backgroundColor: isEnableSignin() ? COLORS.main4 : COLORS.gray3, 
                         height: 55,
@@ -76,12 +75,11 @@ const ForgotPwScreen = () => {
                     onPress={() => navigation.navigate("ForgotIdScreen")}
                     label={"아이디 찾기"}
                     labelStyle={styles.loginLabelStyle}
-                />
+                /> */}
                 <TextButton 
                     buttonContainerStyle={{
                         // backgroundColor: isEnableSignin() ? COLORS.main4 : COLORS.gray3, 
                         height: 55,
-                        width: 150,
                         alignItems: 'center',
                         marginTop: 25,
                         borderRadius: 20 }}
@@ -89,9 +87,7 @@ const ForgotPwScreen = () => {
                     onPress={() => navigation.navigate("SigninScreen")}
                     label={"로그인 하기"}
                     labelStyle={styles.loginLabelStyle}
-                />
-            </View>
-            
+                />            
         </AuthLayout>
     );
 };

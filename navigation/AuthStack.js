@@ -3,26 +3,29 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {Signin, Signup, ForgotId, ForgotPw, AddInfo, Welcome} from '../Screen/auth/index';
 
-import MainStack from '../navigation/Stack';
+import MainStack from './HomeStack';
 
-const Stack = createStackNavigator();
+const AStack = createStackNavigator();
 
-export default () => (
-    <Stack.Navigator
+const AuthStack = () => {
+    <AStack.Navigator
         screenOptions={{
             headerShown: false
         }}
         initialRouteName="Welcome"
     >
-        <Stack.Screen name="Welcome" component={Welcome}  />
-        <Stack.Screen name="SigninScreen" component={Signin}  />
-        <Stack.Screen name="AddInfoScreen" component={AddInfo}  />
-        <Stack.Screen name="SignupScreen" component={Signup} />
-        <Stack.Screen name="ForgotPwScreen" component={ForgotPw} />
-        <Stack.Screen name="ForgotIdScreen" component={ForgotId} />
+        <AStack.Screen name="Welcome" component={Welcome}  />
+        <AStack.Screen name="SigninScreen" component={Signin}  />
+        <AStack.Screen name="AddInfoScreen" component={AddInfo}  />
+        <AStack.Screen name="SignupScreen" component={Signup} />
+        <AStack.Screen name="ForgotPwScreen" component={ForgotPw} />
+        <AStack.Screen name="ForgotIdScreen" component={ForgotId} />
 
         {/* <Stack.Screen name="SplashScreen" component={Splash} /> */}
-        <Stack.Screen name="MainStack" component={MainStack} />
+        <AStack.Screen name="MainStack" component={MainStack} />
 
-    </Stack.Navigator>
-);
+    </AStack.Navigator>
+}
+
+export default AuthStack;
+    

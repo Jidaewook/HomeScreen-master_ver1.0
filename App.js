@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { AppLoading } from "expo";
 import * as Font from "expo-font";
-import { Image, AsyncStorage } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { Image } from "react-native";
 import { Asset } from "expo-asset";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
-import Tabs from './navigation/Tabs';
-import AuthStack from './navigation/AuthStack';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
+import store, {persistor} from './redux/store';
+import AppLoading from 'expo-app-loading';
+
+import Router from "./navigation/Router";
+import Tabs from "./navigation/Tabs";
+import { StatusBar } from "expo-status-bar";
 
 const cacheImages = images =>
     images.map(image => {
@@ -21,7 +25,6 @@ const cacheFonts = fonts =>
     fonts.map(font => [Font.loadAsync(font), Font.loadAsync(font)]);
 
 export default function App() {
-    const [isAuth, setIsAuth] = useState(false);
     const [isReady, setIsReady] = useState(false);
     const loadAssets = () => {
         const images = cacheImages([
@@ -31,30 +34,18 @@ export default function App() {
         const fonts = cacheFonts([Ionicons.font, FontAwesome.font]);
         return Promise.all([...images, ...fonts]);
     };
-    const onFinish = () => setIsReady(true);
-
-    useEffect(() => {
-        checkAuth()
-    })
-
-    const checkAuth = async () => {
-        if (AsyncStorage.getItem('token')) {
-           await setIsAuth(false)
-        } else {
-            setIsAuth(false)
-        }
-    } 
+    const onFinish = () => setIsReady(false);
 
     return isReady ? (
         
-        <NavigationContainer>
-            {isAuth ? <Tabs /> : <AuthStack />}
-        </NavigationContainer>
+         <AppLoading />
     ) : (
-        <AppLoading
-            startAsync={loadAssets}
-            onFinish={onFinish}
-            onError={console.error}
-        />
+        <Tabs />
+        // <Provider store={store}>
+        //     <PersistGate persistor={persistor}>
+        //         <Router />
+        //     </PersistGate>
+        //     <StatusBar style={'auto'} />
+        // </Provider>
     );
 }

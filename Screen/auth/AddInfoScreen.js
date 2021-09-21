@@ -60,7 +60,7 @@ const AddInfoScreen = () => {
                     label={'거주지역'}
                     value={local}
                     placeholder={'Insert Your Location'}
-                    autoCompleteType="local"
+                    // autoCompleteType="local"
                     containerStyle={{marginTop: 20}}
                     onChange={(value) => {
                         // utils.validatePassword(value, setPasswordErr)
@@ -83,7 +83,7 @@ const AddInfoScreen = () => {
                     label={'선호하는 기관'}
                     value={institutions}
                     placeholder={'Insert Your Institutions'}
-                    autoCompleteType="institutions"
+                    // autoCompleteType="institutions"
                     containerStyle={{marginTop: 20}}
                     onChange={(value) => {
                         setInstitutions(value)

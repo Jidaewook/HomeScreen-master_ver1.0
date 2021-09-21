@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { AntDesign, Feather } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
+import axios from 'axios';
 
 import AuthLayout from '../../component/common/AuthLayout';
 import FormInput from '../../component/common/FormInput';
@@ -27,12 +28,44 @@ const RegisterScreen = () => {
         )
     }
 
+    const registerBtnTab = async () => {
+        await axios.post("http://passme-env.eba-fkpnrszj.us-east-2.elasticbeanstalk.com/users/register", {name, email, password})
+                    .then(res => {
+                        console.log(res.data)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+    }
+
     return (
         <AuthLayout
             title="PASSME"
             subTitle="회원가입 하세요"
         >
             <View>
+            <FormInput 
+                    label={"NAME"}
+                    value={name}
+                    placeholder={'Insert Your Name'}
+                    autoCompleteType="name"
+                    containerStyle={{marginTop: 20}}
+                    onChange={(value) => {
+                        setName(value)
+                    }}
+                    errorMsg={nameErr}
+                    appendComponent={
+                        <View
+                            style={{justifyContent: 'center'}}
+                        >
+                            <AntDesign 
+                                name={"check"}
+                                color={(name != "") ? COLORS.main4 : COLORS.gray4}
+                                size={24}
+                            />
+                        </View>
+                    }
+                />
                 <FormInput 
                     label={'EMAIL'}
                     value={email}
@@ -80,28 +113,7 @@ const RegisterScreen = () => {
                         </TouchableOpacity>
                     }
                 />
-                <FormInput 
-                    label={"NAME"}
-                    value={name}
-                    placeholder={'Insert Your Name'}
-                    autoCompleteType="name"
-                    containerStyle={{marginTop: 20}}
-                    onChange={(value) => {
-                        setName(value)
-                    }}
-                    errorMsg={nameErr}
-                    appendComponent={
-                        <View
-                            style={{justifyContent: 'center'}}
-                        >
-                            <AntDesign 
-                                name={"check"}
-                                color={(name != "") ? COLORS.main4 : COLORS.gray4}
-                                size={24}
-                            />
-                        </View>
-                    }
-                />
+                
                 
                 <TextButton 
                     buttonContainerStyle={{
@@ -111,7 +123,8 @@ const RegisterScreen = () => {
                         marginTop: 25,
                         borderRadius: 20 }}
                     disabled={isEnableSignup() ? false : true}
-                    onPress={() => navigation.navigate("AddInfoScreen")}
+                    // onPress={() => navigation.navigate("AddInfoScreen")}
+                    onPress={() => registerBtnTab()}
                     label={"다음"}
                     labelStyle={styles.registerLabelStyle}
                 />
@@ -144,7 +157,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     SmallButtonText: {
-        fontSize: theme.sizes.h3,
+        fontSize: theme.sizes.h4,
         color: COLORS.black,
         textAlign: 'center'
     },

@@ -1,9 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import { apiImage } from '../../api';
-import Likes from './Likes';
-
+import {View, Text, Image,TouchableOpacity } from 'react-native';
 
 const NoticeCard = ({onPress, src, image, name, desc}) => {
     return (

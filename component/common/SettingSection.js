@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableHighlightComponent } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+
 import styled from 'styled-components';
 import themes from '../../config/themes';
 import {View, Text} from 'react-native';

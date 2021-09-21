@@ -1,10 +1,9 @@
 import React, {useState, useEffect, useLayoutEffect} from 'react';
-import {View, Text, TouchableOpacity, ActivityIndicator, SafeAreaView, StyleSheet } from 'react-native';
+import {View, Text,ScrollView, TouchableOpacity, ActivityIndicator, SafeAreaView, StyleSheet } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import themes from '../../../config/themes';
 import {FontAwesome} from '@expo/vector-icons';
 import PostModal from '../../../component/common/modal/Post';
-import { ScrollView } from 'react-native-gesture-handler';
 
 import axios from 'axios';
 

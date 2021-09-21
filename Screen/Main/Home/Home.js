@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import {Text, View, StatusBar, StyleSheet, alert,  ScrollView, Dimensions, Modal, TouchableOpacity, Alert } from 'react-native';
+import {Text,TextInput, View, StatusBar, StyleSheet, alert,  ScrollView, Dimensions, Modal, TouchableOpacity, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { TextInput } from 'react-native-gesture-handler';
 
 import themes from '../../../config/themes';
 import Section from '../../../component/common/Section';
@@ -9,7 +8,6 @@ import Card from '../../../component/common/Card';
 import {useNavigation} from '@react-navigation/native';
 import Axios from 'axios';
 import { BASE_URL } from '../../../constants';
-import SearchModal from '../../../component/common/SearchModal';
 import { COLORS } from '../../../consts';
 
 const {width, height} = Dimensions.get("screen");

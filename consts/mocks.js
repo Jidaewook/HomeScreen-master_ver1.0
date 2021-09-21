@@ -99,21 +99,21 @@ export const menuItem = [
 const onboarding_screens = [
     {
         id: 1,
-        backgroundImage: require("../images/onboard/voodoo_back.jpeg"),
+        backgroundImage: require("../images/onboard/blue_light.jpeg"),
         bannerImage: require("../images/onboard/1.png"),
         title: "실제 출제위원 참여",
         description: "실제 출제위원이 강조하는 내용                                   실제 출제위원이 푸는 방법                                         그 어디에서도 볼 수 없는 리얼리티"
     },
     {
         id: 2,
-        backgroundImage: require("../images/onboard/voodoo_back.jpeg"),
+        backgroundImage: require("../images/onboard/blue_light.jpeg"),
         bannerImage: require("../images/onboard/2.png"),
         title: "피셋형/모듈형/인적성 모두 제공",
         description: "피셋형과 모듈형                                                        두 유형에 대한 꾸준한 연습"
     },
     {
         id: 3,
-        backgroundImage: require("../images/onboard/voodoo_back.jpeg"),
+        backgroundImage: require("../images/onboard/blue_light.jpeg"),
         bannerImage: require("../images/onboard/3.png"),
         title: "합격까지 무한",
         description: "유튜브 기반 영상 강의를 통해                                                          적성검사 관련 공공교육을 실현하기 위한                                                          PASSME"

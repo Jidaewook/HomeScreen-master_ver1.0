@@ -1,7 +1,6 @@
 import { Input } from 'galio-framework';
 import React from 'react';
-import {View, Text, SafeAreaView, Dimensions, ScrollView, StyleSheet, KeyboardAvoidingView, ImageBackground, Image} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {View, Text, SafeAreaView, Dimensions,TouchableOpacity, ScrollView, StyleSheet, KeyboardAvoidingView, ImageBackground, Image} from 'react-native';
 
 import DismissKeyboard from '../../component/common/DismissKeyboard';
 import { COLORS, theme } from '../../consts';
